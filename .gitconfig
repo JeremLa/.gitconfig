@@ -6,12 +6,15 @@
     editor = vim
 [pull]
     rebase = preserve
+[push]
+    #by default push current branch to a branch with the same name
+    default = current
 [merge]
     log = true
 [alias]
     #pretty logs
     #log all commit
-    ls   = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ls   = log --graph --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     #log all commit no color
     lsnc = log --pretty=format:"%h\\ %s\\ [%cn]"
     #log all with commit's files modified
@@ -20,8 +23,9 @@
     lsd  = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
     #same as ls with since date
     lss  = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-    #log diff commit between current branch and master
-    ldb  = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit master..
+    #log diff commit between current branch and branch you add to commande
+    # if you create branche from master you can write : git ldb master..
+    ldb  = log --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
     
     #log commit where file as been modified
     flu = log -u
@@ -37,7 +41,6 @@
     ci    = commit
     cia   = commit --amend
     co    = checkout
-    br    = branch
     diff  = diff --word-diff
     dc    = diff --cached
     a     = add
