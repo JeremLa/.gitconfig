@@ -17,23 +17,23 @@ In first, you have to change default user informations directly in file or with 
 
 **name**
 ``` bash
-:~$ git --global user.name=<your name>
+    git --global user.name=<your name>
 ```
 
 **email**
 ``` bash
-:~$ git --global user.email=<your email>
+    git --global user.email=<your email>
 ```
 
 All commands are usable with prefix git
 
 ```bash
-:~$ git ls
-:~$ git ll
+    git ls
+    git ll
 ```
 
 Some of them needs additionals informations
 
 ```bash
-:~$ git flu <file name>
+    git flu <file name>
 ```
