@@ -14,18 +14,18 @@
 [alias]
     #pretty logs
     #log all commit
-    ls   = log --graph --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-    #log all commit no color
-    lsnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-    #log all with commit's files modified
-    ll   = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    ls   = log --graph --pretty=format:'%C(yellow)%h %Cred%d %Creset%s%Cblue [%cn]'
     #same as ls with date
-    lsd  = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    lsd  = log --graph --pretty=format:'%C(yellow)%h %Cgreen%ad%Cred%d %Creset%s%Cblue [%cn]' --date=short
     #same as ls with since date
-    lss  = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    lss  = log --graph --pretty=format:'%C(yellow)%h %Cgreen%ad%Cred%d %Creset%s%Cblue [%cn]' --date=relative
+    #log all commit no color
+    lsnc = log --graph --pretty=format:'%h %s [%cn]'
+    #log all with commit's files modified
+    ll   = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --numstat 
     #log diff commit between current branch and branch you add to commande
     # if you create branche from master you can write : git ldb master..
-    ldb  = log --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
+    ldb  = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue [%cn]' --abbrev-commit
     
     #log commit where file as been modified
     flu = log -u
