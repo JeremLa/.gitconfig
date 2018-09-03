@@ -27,6 +27,10 @@
     # if you create branche from master you can write : git ldb master..
     ldb  = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue [%cn]' --abbrev-commit
     
+    # reflog is used to list all action down with git and you can reset to previous action 
+    # for cancel mistake with git reset
+    rl =  reflog --format='%C(magenta)%h%C(reset) %C(cyan)%gd%C(reset)%C(yellow)%d%Creset %gs (%s) %C(green)%cn%C(reset)'
+    
     #log commit where file as been modified
     flu = log -u
     
