@@ -51,6 +51,8 @@
     re    = remote
     rev   = remote --verbose
     b     = branch
+    bd    = branch -d
+    bD    = branch -D
     bn    = checkout -b
     rebi  = rebase -i
     rebc  = rebase --continue
