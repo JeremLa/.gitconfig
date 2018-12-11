@@ -1,0 +1,30 @@
+################################################
+#            alias for symfony                 #
+################################################
+
+//base to all symfony >3.0 commands
+// symfony <3.0, replace -bin- by -app-
+alias pbc='php bin/console'
+
+//basic commands for symfony maker bundle
+alias migration='pbc make:migration'
+alias form='pbc make:form'
+alias controller='pbc make:controller'
+alias entity='pbc make:entity'
+
+//basic commands for symfony server bundle
+alias srun='pbc server:run'
+alias sstart='pbc server:start'
+alias sstop='pbc server:stop'
+
+//classic commands but useful
+alias route='pbc debug:router'
+alias cc='pbc cache:clear'
+
+//basics commands for doctrine bundle
+alias dump-sql='pbc doctrine:schema:update --dump-sql'
+alias validate='pbc doctrine:schema:validate'
+alias migrate='pbc doctrine:migrations:migrate --no-interaction'
+
+//basics commands for FOS user bundle
+alias user='pbc fos:user:create'
